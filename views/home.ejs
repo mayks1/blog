@@ -1,0 +1,17 @@
+<%- include('partials/header'); -%>
+
+<h1>Начало</h1>
+
+<p><%= startingContent %></p>
+
+<% posts.forEach((post) => { %>
+
+<h1><%= post.title %></h1>
+<p>
+    <%= post.content.substring(0, 200) + ' ... ' %>
+    <a href="/posts/<%= post.title %>">Прочети повече</a>
+</p>
+
+<% }) %>
+
+<%- include('partials/footer'); -%>
