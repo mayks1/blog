@@ -9,22 +9,26 @@ const dataPath = path.join(path.dirname(process.mainModule.filename), 'data', 'p
 
 let posts = [];
 
-fs.readFile(dataPath, (err, fileContent) => {
-  if (err) {
-    posts = [];
-  }
-  posts = JSON.parse(fileContent);
-});
-
-
 
 exports.getHome = (req, res) => {
+
+  fs.readFile(dataPath, (err, fileContent) => {
+    if (err) {
+      posts = [];
+      console.log(err);
+    } else {
+
+      posts = JSON.parse(fileContent);
 
     res.render('home', { 
       pageTitle : 'Начало',
       startingContent: homeStartingContent,
       posts: posts
      });
+
+    }
+    
+  });
 };
 
 exports.getAbout = (req, res) => {
@@ -53,24 +57,46 @@ exports.postCompose = (req, res) => {
     content: req.body.postBody
   };
 
-  // Add post to the Array
-  posts.push(post);
-  fs.writeFile(dataPath, JSON.stringify(posts), (err) => {
-    console.log(err);
+  //Read the Posts from file
+  fs.readFile(dataPath, (err, fileContent) => {
+    if (err) {
+      posts = [];
+      console.log(err);
+    } else {
+
+      posts = JSON.parse(fileContent);
+
+      // Add post to the Array
+      posts.push(post);
+      fs.writeFile(dataPath, JSON.stringify(posts), (err) => {
+        console.log(err);
+      });
+      res.redirect('/');
+
+    }
+    
   });
-  res.redirect('/');
 }
 
 exports.getPost = (req, res) => {
   const requestedTitle = _.lowerCase(req.params.postName);
 
-  posts.forEach(post => {
-    const storedTitle = _.lowerCase(post.title);
-    if (storedTitle === requestedTitle) {
-
-      res.render('post', { post: post, pageTitle: post.title});
+  fs.readFile(dataPath, (err, fileContent) => {
+    if (err) {
+      console.log(err);
     } else {
-      console.log('Dont match!');
+
+      posts = JSON.parse(fileContent);
+
+      posts.forEach( post => {
+        const storedTitle = _.lowerCase(post.title);
+
+        if (storedTitle === requestedTitle) {
+          res.render('post', { post: post, pageTitle: post.title});
+        } 
+      });
+
     }
-  });
+  });  
+
 }
