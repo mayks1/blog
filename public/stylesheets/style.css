@@ -18,6 +18,9 @@ body {
 nav {
   margin-bottom: 30px; }
 
+.form-post {
+  display: inline-block; }
+
 .footer {
   margin-top: auto;
   text-align: center;

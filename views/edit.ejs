@@ -1,0 +1,22 @@
+<%- include('partials/header'); -%>
+
+<h1 class="mb-3">Редакция</h1>
+
+<form action="/posts/<%= post.url %>/update" method="POST">
+
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Заглавие</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" value="<%= post.title %>" name="post[title]">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Текст</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="post[content]"><%= post.content %></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Редакция</button>
+
+</form>
+
+    
+<%- include('partials/footer'); -%>

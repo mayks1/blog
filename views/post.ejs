@@ -4,6 +4,21 @@
 
 <p><%= post.content %></p>
 
+<!-- <form class='form-post' method="POST" action="/posts/<%= post.url %>/edit">
+    <input type="hidden" value="<%= post.url %>" name="postUrl">
+    <button class="btn btn-primary" type="submit">Редакция</button>
+</form> -->
+
+<a href="/posts/<%= post.url %>/edit">
+    <button class="btn btn-primary" type="submit">Редакция</button>
+</a>
 
 
+<form class='form-post' method="POST" action="/posts/delete">
+    <input type="hidden" value="<%= post.url %>" name="postUrl">
+    <button class="btn btn-primary" type="submit">Изтриване</button>
+</form>
+
+    
 <%- include('partials/footer'); -%>
+
