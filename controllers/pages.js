@@ -8,7 +8,7 @@ const aboutContent = "Lorem Ipsum is simply dummy text of the printing and types
 
 
 // mongoose.connect("mongodb://localhost:27017/blog1DB", {useNewUrlParser: true});
-mongoose.connect("mongodb://localhost:27017/blog1DB", {useNewUrlParser: true});
+mongoose.connect("mongodb+srv://mayks:mil25310@cluster0-m18pa.gcp.mongodb.net/blog1DB", {useNewUrlParser: true});
 mongoose.set('useFindAndModify', false);
 
 const postSchema = {
