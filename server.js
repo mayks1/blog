@@ -3,7 +3,7 @@ const path                  = require('path');
 const bodyParser            = require("body-parser");
 const sassCompiler          = require('./utils/sass');
 const viewPath              = path.join(__dirname, 'views');
-const port                  = process.env.PORT || 3000;
+const PORT                  = process.env.PORT || 3000;
 
 const app = express();
 
@@ -42,7 +42,5 @@ app.use(deletePostRoute);
 app.use(errorControler.get404);
 
 
-app.listen(port, function() {
-  console.log("Server started on port 3000");
-});
+app.listen(PORT, () => console.log(`Server started on port ${PORT} ...`));
 
