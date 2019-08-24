@@ -6,22 +6,21 @@
   <title>Blog of Mayks | <%= pageTitle %></title>
   <meta charset="utf-8">
   <%# <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> %>
-  <link rel="stylesheet" href="/stylesheets/bootstrap/bootstrap.min.css" />
+  <!-- <link rel="stylesheet" href="/stylesheets/bootstrap/bootstrap.min.css" /> -->
   <link rel='stylesheet' href="/stylesheets/style.css" />
   <div class='container'>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">Mayks Blog</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link active" href="/">Начало <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="/about">За Мен</a>
-            <a class="nav-item nav-link" href="/contact">Контакт</a>
-            <a class="nav-item nav-link" href="/compose">Създаване</a>
-          </div>
-        </div>
+    <nav>
+      <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/">Начало</a></li>
+        <li><a href="/about">За Мен</a></li>
+        <li><a href="/contact">Контакт</a></li>
+        <li><a href="/compose">Създаване</a></li>
+      </ul>
     </nav>
 </div>
   <body>
