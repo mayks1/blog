@@ -6,6 +6,7 @@
 
 nav 
   height: 10vh
+  max-height: 50px
   background: #343a40
   margin-bottom: 30px
 
@@ -18,13 +19,14 @@ nav
   justify-content: space-around
   align-items: center
   margin-left: auto
+  margin-right: 10%
 
 .nav-links li a 
   color: white
   text-decoration: none
   font-size: 16px
 
-@media screen and (max-width: 768px) 
+@media screen and (max-width: 900px) 
   .line 
     width: 30px
     height: 3px
@@ -56,12 +58,9 @@ nav
     pointer-events: none
   
   .nav-links.open 
-    clip-path: circle(1000px at 90% -10%)
-    -webkit-clip-path: circle(1000px at 90% -10%)
+    clip-path: circle(12000px at 90% -10%)
+    -webkit-clip-path: circle(12000px at 90% -10%)
     pointer-events: all
-  
-  .landing 
-    flex-direction: column
   
   .nav-links li 
     opacity: 0

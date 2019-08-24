@@ -1,0 +1,27 @@
+
+//MEDIA QUERY MANAGER
+// 0   - 576px     :   xs
+// 0   - 600px     :   Phone
+// 600 - 900px     :   Tablet portrait
+// 900 - 1200px    :   Tablet landscape
+// [1200 1800]     :   Normal style
+// 1800 px +       :   Big desktop
+//
+
+// ПРЕВРЪЩАНЕ НА px В em
+// 1em = 16px
+// 600 / 16 = 37.5em
+
+=respond($breakpoint)
+    @if $breakpoint == xs
+        @media (max-width: 37.5em) //600px
+            @content
+    @if $breakpoint == sm
+        @media (min-width: 37.51em) and (max-width: 56.25em)  //900px
+            @content
+    @if $breakpoint == md
+        @media (min-width: 56.26em) and (max-width: 75em)  //1200px
+            @content
+    @if $breakpoint == lg
+        @media (min-width: 112.5em) //1800px
+            @content

@@ -1,6 +1,6 @@
 <%- include('partials/header'); -%>
 
-<h1>Здравейте и добре дошли в моя блог</h1>
+<h1 class="page-title">Здравейте и добре дошли в моя блог</h1>
 
 <p><%= startingContent %></p>
 
@@ -8,8 +8,8 @@
 
     <% posts.forEach((post) => { %>
 
-        <h1><%= post.title %></h1>
-        <p>
+        <h1 class="post-title"><%= post.title %></h1>
+        <p class="post-content">
             <%= post.content.substring(0, 200) + ' ... ' %>
             <a href="/posts/<%= post.url %>">Прочети повече</a>
         </p>
