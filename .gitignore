@@ -3,10 +3,9 @@
 # dependencies
 node_modules/
 
-data
-now
+data/
+now/
 
 # misc
 .DS_Store
-.gitignore
 .env
