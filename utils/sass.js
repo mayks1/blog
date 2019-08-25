@@ -4,7 +4,7 @@ exports.sass = sassMiddleware({
     src: 'public',
     dest: 'public',
     indentedSyntax: true, // true = .sass and false = .scss
-    // outputStyle: 'compressed',
+    outputStyle: 'compressed',
     force: true,
     sourceMap: true
   })
