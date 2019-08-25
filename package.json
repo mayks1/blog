@@ -17,7 +17,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "author": "Michael Mihaylov",
   "license": "ISC"
