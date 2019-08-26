@@ -1,27 +1,35 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Blog of Mayks | <%= pageTitle %></title>
-  <meta charset="utf-8">
-  <%# <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> %>
-  <!-- <link rel="stylesheet" href="/stylesheets/bootstrap/bootstrap.min.css" /> -->
-  <link rel='stylesheet' href="/stylesheets/style.css" />
-  <!-- <div class='container'> -->
-    <nav>
-      <div class="hamburger">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
-      <ul class="nav-links">
-        <li><a href="/">Начало</a></li>
-        <li><a href="/about">За Мен</a></li>
-        <li><a href="/contact">Контакт</a></li>
-        <li><a href="/compose">Създаване</a></li>
-      </ul>
-    </nav>
-<!-- </div> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blog of Mayks | <%= pageTitle %></title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/menu.css">
+    
+</head>
+  
   <body>
+      <nav class="navbar">
+          <span class="navbar-toggle" id="js-navbar-toggle">
+              <i class="fas fa-bars"></i>
+          </span>
+          <a href="/" class="logo">Моят Блог</a>
+          <ul class="main-nav" id="js-menu">
+            <li>
+                <a href="/" class="nav-links">Начало</a>
+            </li>
+            <li>
+                <a href="/about" class="nav-links">За Мен</a>
+            </li>
+            <li>
+                <a href="/contact" class="nav-links">Контакт</a>
+            </li>
+            <li>
+                <a href="/compose" class="nav-links">Създаване</a>
+            </li>
+          </ul>
+        </nav>
     <div class="container">
