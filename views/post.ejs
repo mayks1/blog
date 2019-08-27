@@ -2,22 +2,24 @@
 
 <h1 class="page-title"><%= post.title %></h1>
 
-<p><%= post.content %></p>
+<p class="post-content"><%= post.content %></p>
 
 <!-- <form class='form-post' method="POST" action="/posts/<%= post.url %>/edit">
     <input type="hidden" value="<%= post.url %>" name="postUrl">
     <button class="btn btn-primary" type="submit">Редакция</button>
 </form> -->
+<div class="wrap-btn">
+    <a href="/posts/<%= post.url %>/edit">
+        <button class="btn-blue" type="submit">Редакция</button>
+    </a>
+    
+    
+    <form class='form-post' method="POST" action="/posts/delete">
+        <input type="hidden" value="<%= post.url %>" name="postUrl">
+        <button class="btn-red" type="submit">Изтриване</button>
+    </form>
+</div>
 
-<a href="/posts/<%= post.url %>/edit">
-    <button class="btn btn-primary" type="submit">Редакция</button>
-</a>
-
-
-<form class='form-post' method="POST" action="/posts/delete">
-    <input type="hidden" value="<%= post.url %>" name="postUrl">
-    <button class="btn btn-primary" type="submit">Изтриване</button>
-</form>
 
     
 <%- include('partials/footer'); -%>
