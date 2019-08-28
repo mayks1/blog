@@ -36,4 +36,35 @@
     </div>
 </div> -->
 
+<div class="form-container">
+  <div class="wrapper animated bounceInLeft">
+      <div class="company-info">
+          <h3>Mayks WEB Development </h3>
+          <ul>
+              <li>Улица 44</li>
+              <li>(555) 555-5555</li>
+              <li>mayks1@gmail.com</li>
+          </ul> 
+      </div>
+      <div class="contact">
+          <h3>Създаване на Пост</h3>
+          <form action="/compose" method="POST">
+              <p class="full">
+                  <label>Заглавие</label>
+                  <input type="text" name="postTitle">
+              </p>
+          
+              <p class="full">
+                  <label for="">Текст</label>
+                  <textarea rows="5" name="postContent"></textarea>
+              </p>
+              <p class="full">
+                  <button type="submit">Публикуване</button>
+              </p>
+          </form>
+      </div>
+
+  </div>
+</div>
+
 <%- include('partials/footer'); %>

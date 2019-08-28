@@ -1,6 +1,7 @@
 
 header 
     position: fixed
+    z-index: 100
     top: 0
     left: 0
     padding: 0 10rem
@@ -50,8 +51,6 @@ header
         display: block
     
     header nav 
-        z-index: 100
-        /* display: none; */
         position: absolute
         width: 100%
         height: calc(100vh - 5rem)
@@ -66,3 +65,5 @@ header
             text-align: center
             li 
                 border-bottom: 1px solid rgba(0, 0, 0,.2)
+                a 
+                    font-size: 2.5rem
