@@ -60,16 +60,20 @@ exports.getCompose = (req, res) => {
 // POST COMPOSE
 exports.postCompose = (req, res) => {
   const reqUrl = _.kebabCase(req.body.postTitle);
-
-  const post = new Post ({
-    title: req.body.postTitle,
-    content: req.body.postContent,
-    url: reqUrl
-  });
-
-  post.save();
-
-  res.redirect("/");
+  if (reqUrl.length < 3) {
+    res.send('-------------The Title must contain atleast 3 characters!!!------------');
+    return;
+  } else {
+    const post = new Post ({
+      title: req.body.postTitle,
+      content: req.body.postContent,
+      url: reqUrl
+    });
+  
+    post.save();
+  
+    res.redirect("/");
+  }
 }
 
 // GET POSTS PAGE

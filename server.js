@@ -24,6 +24,7 @@ const errorControler  = require('./controllers/404');
 
 //Use SASS
 app.use(sassCompiler.sass);
+app.use(sassCompiler.prefixer);
 
 app.set('views', viewPath);
 app.set('view engine', 'ejs');
