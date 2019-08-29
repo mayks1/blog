@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&subset=cyrillic");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
 *,
 *::before,
 *::after {
@@ -360,6 +361,19 @@ body {
   .company-info ul,
   .brand {
     text-align: left; } }
+
+.container-404 p {
+  margin-top: 3rem; }
+
+.title-404 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 8rem;
+  width: 100%; }
+
+.links {
+  margin-top: 3rem; }
+  .links a {
+    margin-right: 2rem; }
 
 .footer {
   background: #343a40;

@@ -61,7 +61,7 @@ exports.getCompose = (req, res) => {
 exports.postCompose = (req, res) => {
   const reqUrl = _.kebabCase(req.body.postTitle);
   if (reqUrl.length < 3) {
-    res.send('-------------The Title must contain atleast 3 characters!!!------------');
+    res.send('Заглавието трбва да съдържа най-малко 3 занака!');
     return;
   } else {
     const post = new Post ({
@@ -123,13 +123,20 @@ exports.editPost = (req, res) => {
 exports.updatePost = (req, res) => {
 
   const requestedPostUrl = req.params.postUrl;
+  const newPost = req.body.post;
+  newPost.url = _.kebabCase(newPost.title);
 
-  Post.findOneAndUpdate({url: requestedPostUrl}, req.body.post, (err, updatedpost) => {
-    if (err) {
-      console.log(err);
-      res.redirect('/');
-    } else {
-      res.redirect('/posts/' + req.params.postUrl);
-    }
-  });
+  if (newPost.title.length < 3) {
+    res.send('Заглавието трябва да съдържа най-малко 3 занака!');
+    return;
+  } else {
+    Post.findOneAndUpdate({url: requestedPostUrl}, newPost, (err, oldPost) => {
+      if (err) {
+        console.log(err);
+        res.redirect('/');
+      } else {
+        res.redirect('/');
+      }
+    });
+  }
 }

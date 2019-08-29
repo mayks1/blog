@@ -1,22 +1,35 @@
 <%- include('partials/header'); -%>
 
-<h1 class="mb-3">Редакция</h1>
-
-<form action="/posts/<%= post.url %>/update" method="POST">
-
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Заглавие</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" value="<%= post.title %>" name="post[title]">
+<!---------------------------- FORM EDIT ------------------->
+<div class="form-container">
+  <div class="wrapper animated bounceInLeft">
+      <div class="company-info">
+          <h3>Mayks WEB Development </h3>
+          <ul>
+              <li>Улица 44</li>
+              <li>(555) 555-5555</li>
+              <li>mayks1@gmail.com</li>
+          </ul> 
+      </div>
+      <div class="contact">
+          <h3>Редакция</h3>
+          <form action="/posts/<%= post.url %>/update" method="POST">
+              <p class="full">
+                  <label>Заглавие</label>
+                  <input type="text" value="<%= post.title %>" name="post[title]">
+              </p>
+          
+              <p class="full">
+                  <label for="">Текст</label>
+                  <textarea rows="5" name="post[content]"><%= post.content %></textarea>
+              </p>
+              <p class="full">
+                  <button type="submit">Редакция</button>
+              </p>
+          </form>
+      </div>
   </div>
-
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">Текст</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="post[content]"><%= post.content %></textarea>
-  </div>
-
-  <button type="submit" class="btn btn-primary">Редакция</button>
-
-</form>
+</div>
 
     
 <%- include('partials/footer'); -%>
